@@ -17,9 +17,11 @@ Select your Docx file. File is processed locally and remains private.
 
 @code {
     private string[] files = new string[] { "none selected" };
-    private string status = "";
+    private string status;
 
-    private string text = "";
+    private string text;
+
+    private string textP;
 
     private async Task LoadFiles(InputFileChangeEventArgs e)
     {
@@ -41,6 +43,11 @@ Select your Docx file. File is processed locally and remains private.
 
                 // so here we need to do something clever with the body and turn it into 
                 // markdown. We probably need to return a zip file with images and such.
+
+               foreach (var paragraph in wordDoc.MainDocumentPart.RootElement.Descendants<Paragraph>())
+               {
+                   textP += paragraph.InnerText + "\n";
+               }               
 
                 var totaltext = body.InnerText;
                 text += totaltext;

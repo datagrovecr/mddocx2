@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jim/dev/datagrove/mddocx2/mddocx2.csproj": {}
+    "/Users/fabianvalverde/Documents/GitHub/mddocx2/mddocx2.csproj": {}
   },
   "projects": {
-    "/Users/jim/dev/datagrove/mddocx2/mddocx2.csproj": {
+    "/Users/fabianvalverde/Documents/GitHub/mddocx2/mddocx2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jim/dev/datagrove/mddocx2/mddocx2.csproj",
+        "projectUniqueName": "/Users/fabianvalverde/Documents/GitHub/mddocx2/mddocx2.csproj",
         "projectName": "mddocx2",
-        "projectPath": "/Users/jim/dev/datagrove/mddocx2/mddocx2.csproj",
-        "packagesPath": "/Users/jim/.nuget/packages/",
-        "outputPath": "/Users/jim/dev/datagrove/mddocx2/obj/",
+        "projectPath": "/Users/fabianvalverde/Documents/GitHub/mddocx2/mddocx2.csproj",
+        "packagesPath": "/Users/fabianvalverde/.nuget/packages/",
+        "outputPath": "/Users/fabianvalverde/Documents/GitHub/mddocx2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/jim/.nuget/NuGet/NuGet.Config"
+          "/Users/fabianvalverde/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"

@@ -841,10 +841,6 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-Azk5sbYFVo84h8NpIst9roIPGLH2y8ewQ9SY\/sUHvgs=",
-      "url": "_framework\/dotnet.6.0.9.5xbcmlyk8o.js"
-    },
-    {
       "hash": "sha256-DCornv7RwGmh5F2M7NdY9Sg66xjw779ggSN9nS\/Br5o=",
       "url": "_framework\/dotnet.timezones.blat"
     },
@@ -869,11 +865,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-pQxT3TQaUvgppPLqITDpN5u5bzquLqQutZSWmKOFYKs=",
+      "hash": "sha256-P5UcsucGFKHPD0y\/E6W5Og+oH0UiPNlZwLLiktTavjI=",
       "url": "_framework\/mddocx2.dll"
     },
     {
-      "hash": "sha256-YxdL3vKJeMwkQRPTocWatFjg0j0bti3qCW\/sMxiQ6CA=",
+      "hash": "sha256-XL0a\/mfGOSzm5qrQcF5RvHBvmrA0Bpj25Co0NNz11IY=",
       "url": "_framework\/mddocx2.pdb"
     },
     {
@@ -881,9 +877,13 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-HkMEp1GTzTYhdOhVyCA2hlXDZR81h6xkhgjA+BlHMmM=",
+      "hash": "sha256-Wtw6v08ryIEGrsPG8wTcGpR\/BqbXVLF1AWzgN8dT7Ro=",
       "url": "_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-Azk5sbYFVo84h8NpIst9roIPGLH2y8ewQ9SY\/sUHvgs=",
+      "url": "_framework\/dotnet.6.0.9.45gc8feq73.js"
     }
   ],
-  "version": "N3d0nB2u"
+  "version": "UuFcQzWx"
 };
