@@ -1,0 +1,1 @@
+/Users/fabianvalverde/Documents/GitHub/mddocx2/bin/Release/net6.0/publish/web.config

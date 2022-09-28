@@ -13,15 +13,15 @@ Select your Docx file. File is processed locally and remains private.
 <InputFile OnChange="@LoadFiles" multiple accept='.docx' />
 
 <p> @status</p>
-<p> @text </p>
+<p> @text[0]</p>
+
+
 
 @code {
     private string[] files = new string[] { "none selected" };
     private string status;
 
-    private string text;
-
-    private string textP;
+    private string[] text = new string[3];
 
     private async Task LoadFiles(InputFileChangeEventArgs e)
     {
@@ -37,24 +37,43 @@ Select your Docx file. File is processed locally and remains private.
                 var fileStream = new MemoryStream();
                 await file.OpenReadStream(maxAllowedSize: long.MaxValue).CopyToAsync(fileStream);
 
-                WordprocessingDocument wordDoc = WordprocessingDocument.Open(fileStream, false);
-                DocumentFormat.OpenXml.Wordprocessing.Body body
-                = wordDoc.MainDocumentPart.Document.Body;
+                using (WordprocessingDocument docx = WordprocessingDocument.Open(fileStream, false))
+                {
+                    Body body = docx.MainDocumentPart.Document.Body;
 
-                // so here we need to do something clever with the body and turn it into 
-                // markdown. We probably need to return a zip file with images and such.
+                    // so here we need to do something clever with the body and turn it into
+                    // markdown. We probably need to return a zip file with images and such.
 
-               foreach (var paragraph in wordDoc.MainDocumentPart.RootElement.Descendants<Paragraph>())
-               {
-                   textP += paragraph.InnerText + "\n";
-               }               
 
-                var totaltext = body.InnerText;
-                text += totaltext;
+                    foreach (var paragraph in docx.MainDocumentPart.RootElement.ChildElements)
+                    {
+                        var i = 0;
+                        foreach (var run in paragraph.Descendants<Run>())
+                        {
+                            if (run.RunProperties.Bold != null && (run.RunProperties.Bold.Val == null || run.RunProperties.Bold.Val)){
+                                text[0] += run.InnerText;
+                            }
+                            if(run.RunProperties.Italic != null && (run.RunProperties.Italic.Val == null || run.RunProperties.Italic.Val))
+                            {
+                                text[0] += run.InnerText;
+                            }
 
-                var mdStream = new MemoryStream(Encoding.UTF8.GetBytes(text ?? string.Empty));
-                using var streamRef = new DotNetStreamReference(stream: mdStream);
-                await JS.InvokeVoidAsync("downloadFileFromStream", file.Name + ".md", streamRef);
+                            i++;
+                        }
+                        //textP += paragraph.InnerText + "\n";
+                    }
+
+                    //var totaltext = body.InnerText;
+                    //text += totaltext;
+
+
+                    /*
+                    var mdStream = new MemoryStream(Encoding.UTF8.GetBytes(text ?? string.Empty));
+                    using var streamRef = new DotNetStreamReference(stream: mdStream);
+                    await JS.InvokeVoidAsync("downloadFileFromStream", file.Name + ".md", streamRef);
+                    */
+                }
+
             }
             status = "done";
         }
